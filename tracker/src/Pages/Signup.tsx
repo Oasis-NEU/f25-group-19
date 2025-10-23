@@ -23,7 +23,7 @@ function SignUp() {
                     <label>Email Address</label>
                     <input
                         type="text"
-                        // value={password}
+                        // value={password} easter egg
                         // onChange={(e) => setPassword(e.target.value)}
                         placeholder="name@example.com"
                     />
