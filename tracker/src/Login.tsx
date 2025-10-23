@@ -7,7 +7,7 @@ function Login() {
     const [message, setMessage] = useState("");
     const [messageType, setMessageType] = useState(""); // 'success' or 'error'
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
 
         // Example: basic validation
