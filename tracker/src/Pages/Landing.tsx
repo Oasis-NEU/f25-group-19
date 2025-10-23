@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import './Landing.css'; // Import the CSS file
+import { Link } from 'react-router-dom'
+import '../Styles/Landing.css'; // Import the CSS file
 
 function Landing() {
     return (
@@ -9,10 +10,12 @@ function Landing() {
             
             {/* Wrapper for right-aligned auth links */}
             <div className='auth-links'>
-                <button>   
-                    Sign In
-                </button>
-                <a href="/signup">Sign Up</a> 
+                <Link to="/login">
+                    <button>   
+                        Sign in
+                    </button>
+                </Link>
+                <Link to="/signup">Sign Up</Link> 
             </div>
         </div>
     </div>)

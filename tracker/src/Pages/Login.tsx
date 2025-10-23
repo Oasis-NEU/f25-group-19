@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './Login.css'
+import '../Styles/Form.css'
 
 function Login() {
     const [username, setUsername] = useState("");
@@ -28,8 +28,8 @@ function Login() {
     };
 
     return (
-        <div className="login-container">
-            <form className="login-form" onSubmit={handleSubmit}>
+        <div className="form-container">
+            <form className="form-card" onSubmit={handleSubmit}>
                 <h2>Login</h2>
                 
                 <div className='input-group'>

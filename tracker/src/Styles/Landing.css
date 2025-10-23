@@ -1,10 +1,10 @@
 /* Full-page container */
 :root {
-    --primary-color: #FF0000;
-    --font-dark: #1f1f1f;
-    --font-light:#f1f1f1;
-    --hover: #9b9b9b;
-    --accent: #6dfbf4;
+  --primary-color: #FF0000;
+  --font-dark: #1f1f1f;
+  --font-light: #f1f1f1;
+  --hover: #9b9b9b;
+  --accent: #6dfbf4;
 }
 
 .landing-container {
@@ -13,7 +13,7 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  
+
   /* Colors and Font */
   background-color: var(--primary-color);
   color: var(--font-light);
@@ -24,7 +24,8 @@
 .content-wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centers the H1 */
+  align-items: center;
+  /* Centers the H1 */
   text-align: center;
 }
 
@@ -39,8 +40,10 @@
 .auth-links {
   display: flex;
   flex-direction: column;
-  align-items: flex-end; /* Right-aligns the button and link */
-  width: 100%; /* Ensures it spans the width to align properly */
+  align-items: flex-end;
+  /* Right-aligns the button and link */
+  width: 100%;
+  /* Ensures it spans the width to align properly */
 }
 
 /* Sign In Button */
@@ -49,6 +52,7 @@
   color: var(--font-dark);
   border: none;
   border-radius: 6px;
+  width: 100%;
   padding: 0.6rem 1rem;
   font-size: 1rem;
   font-family: 'Poppins', sans-serif;
