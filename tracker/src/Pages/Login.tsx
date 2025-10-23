@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import '../Styles/Form.css'
 
 function Login() {
@@ -31,7 +32,7 @@ function Login() {
         <div className="form-container">
             <form className="form-card" onSubmit={handleSubmit}>
                 <h2>Login</h2>
-                
+
                 <div className='input-group'>
                     <label>Username</label>
                     <input
@@ -41,7 +42,7 @@ function Login() {
                         placeholder="Enter username"
                     />
                 </div>
-                
+
                 <div className='input-group'>
                     <label>Password</label>
                     <input
@@ -51,12 +52,15 @@ function Login() {
                         placeholder="Enter password"
                     />
                 </div>
-                
+
                 <button type="submit">
                     Log In
                 </button>
                 {message && <p className={`message ${messageType}`}>{message}</p>}
             </form>
+            <div>
+                <Link to="/signup">Sign Up</Link>
+            </div>
         </div>
     );
 }
