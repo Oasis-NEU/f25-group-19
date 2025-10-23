@@ -28,7 +28,7 @@ function Login() {
             <h2>Login</h2>
             <form onSubmit={handleSubmit}>
                 <div style={{ marginBottom: 10 }}>
-                    <label>Username:</label><br />
+                    <label>Username</label><br />
                     <input
                         type="text"
                         value={username}
@@ -38,7 +38,7 @@ function Login() {
                     />
                 </div>
                 <div style={{ marginBottom: 10 }}>
-                    <label>Password:</label><br />
+                    <label>Password</label><br />
                     <input
                         type="password"
                         value={password}
