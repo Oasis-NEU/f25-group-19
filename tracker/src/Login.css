@@ -1,75 +1,94 @@
-/* Center everything in the viewport */
+/* Use Flexbox to center the login card in the viewport */
+body {
+  margin: 0;
+  background-color: #f0f2f5;
+}
+
 .login-container {
-    display: flex;
-    justify-content: center;   /* centers horizontally */
-    align-items: center;       /* centers vertically */
-    height: 100vh;             /* full screen height */
-    background-color: #f5f7fa;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  
-  /* The login form box */
-  .login-form {
-    background: white;
-    padding: 2rem 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 350px;
-    text-align: center;
-  }
-  
-  /* Heading */
-  .login-form h2 {
-    margin-bottom: 1.5rem;
-    color: #333;
-  }
-  
-  /* Input container */
-  .input-group {
-    text-align: left;
-    margin-bottom: 1rem;
-  }
-  
-  .input-group label {
-    display: block;
-    margin-bottom: 0.4rem;
-    color: #555;
-    font-size: 0.9rem;
-  }
-  
-  .input-group input {
-    width: 100%;
-    padding: 0.6rem;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    outline: none;
-    transition: border-color 0.2s;
-  }
-  
-  .input-group input:focus {
-    border-color: #007bff;
-  }
-  
-  /* Button styling */
-  button {
-    width: 100%;
-    padding: 0.75rem;
-    background-color: #007bff;
-    border: none;
-    border-radius: 6px;
-    color: white;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.2s;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Message text */
-  .message {
-    margin-top: 1rem;
-    font-size: 0.9rem;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #ff2c2c;
+  font-family:'Helvetica Neue', sans-serif;
+}
+
+/* The white login card */
+.login-form {
+  background: rgb(255, 255, 255);
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 380px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Heading */
+.login-form h2 {
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+/* Input container */
+.input-group {
+  text-align: left;
+  margin-bottom: 1.25rem; /* Added a bit more space */
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: #555;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.75rem; /* Slightly larger padding */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+.input-group input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Focus ring */
+}
+
+/* Button styling */
+button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #007bff;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Message text */
+.message {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.message.success {
+  color: #28a745; /* Green */
+}
+
+.message.error {
+  color: #dc3545; /* Red */
+}

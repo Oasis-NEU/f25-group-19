@@ -1,0 +1,70 @@
+/* Full-page container */
+:root {
+    --primary-color: #FF0000;
+    --font-dark: #1f1f1f;
+    --font-light:#f1f1f1;
+    --hover: #9b9b9b;
+    --accent: #6dfbf4;
+}
+
+.landing-container {
+  /* Centering */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  
+  /* Colors and Font */
+  background-color: var(--primary-color);
+  color: var(--font-light);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Wrapper to hold all content */
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the H1 */
+  text-align: center;
+}
+
+/* Heading */
+.landing-container h1 {
+  font-size: 18dvh;
+  font-weight: 700;
+  margin: 0;
+  margin-bottom: -2rem;
+}
+
+.auth-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Right-aligns the button and link */
+  width: 100%; /* Ensures it spans the width to align properly */
+}
+
+/* Sign In Button */
+.auth-links button {
+  background-color: var(--font-light);
+  color: var(--font-dark);
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.auth-links button:hover {
+  background-color: var(--hover);
+}
+
+/* Sign Up Link */
+.auth-links a {
+  color: var(--font-light);
+  text-decoration: underline;
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+}
