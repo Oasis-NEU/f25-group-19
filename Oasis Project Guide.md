@@ -28,7 +28,7 @@
 
 - Room Data
 	- List of users []
-	- room_code: str = len(6)
+	- room_code: int = len(6)
 	- Hashmap => 
 	constructor Chore {
 	* task_title: str = ""
@@ -49,6 +49,7 @@
 	living_time: date/int/str
 	rooms = [list of rooms]
 	}
+
 
 
 
