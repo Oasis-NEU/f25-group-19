@@ -14,7 +14,21 @@ class Chores {
     }
 
 
-    
+    edit_task(new_title: string): void {
+        this.task_title = new_title;
+    }
+
+    edit_frequency(new_frequency: Date): void {
+        this.frequency = new_frequency;
+    }
+
+    edit_completion(new_completion: boolean): void {
+        this.completion = new_completion;
+    }
+
+    edit_description(new_description: string): void {
+        this.description = new_description;
+    }
 
 
 
