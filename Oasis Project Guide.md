@@ -42,11 +42,13 @@
 - Users Data
 	constructor User {
 	id = ""
-	username: str = name --> MAYBE (Required Unqiueness)
+	username: str = name --> MAYBE (Required Unqiueness) maybe use Google API to make sure no username is used twice. 
 	name: str = ""
 	email: str = ""
 	phone: int/str
 	living_time: date/int/str
 	rooms = [list of rooms]
 	}
-	
+
+
+
