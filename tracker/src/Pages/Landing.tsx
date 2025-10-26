@@ -8,6 +8,7 @@ function Landing() {
         // Use a Fragment to return two separate layout elements
         <>
             {/* Navbar */}
+            
             <header className='landing-navbar'>
                 <div id="logo-nav">
                     <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
