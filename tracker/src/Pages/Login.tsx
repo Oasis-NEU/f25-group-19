@@ -30,7 +30,6 @@ function Login() {
 
     return (
         <>
-
             {/* Navbar */}
             <header className='landing-navbar'>
                 <div id="logo-nav">
