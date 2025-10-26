@@ -13,8 +13,13 @@
     width: 100%;
     padding: 1rem 2rem;
     display: flex;
-    justify-content: flex-end;
+    /* --- KEY CHANGE --- */
+    /* Distributes space between the logo and the auth links */
+    justify-content: space-between; 
+    /* ------------------ */
+    align-items: center; /* Vertically aligns the logo and button */
     box-sizing: border-box;
+    z-index: 10; /* Ensure navbar is on top */
 }
 
 .auth-links {

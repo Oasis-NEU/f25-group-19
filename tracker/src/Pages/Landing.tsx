@@ -7,7 +7,15 @@ function Landing() {
         // Use a Fragment to return two separate layout elements
         <>
             {/* Navbar */}
+            
             <header className='landing-navbar'>
+                {/* Logo added here */}
+                <div className='navbar-logo'>
+                    <Link to="/">
+                        M8S
+                    </Link>
+                </div>
+
                 <nav className='auth-links'>
                     <Link to="/login">
                         <button>

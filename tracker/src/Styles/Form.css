@@ -12,7 +12,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: linear-gradient(to bottom, var(--primary-color) 40%, #ff5d5d 100%);
   min-height: 100vh;
+  
 }
 
 /* The white card */
