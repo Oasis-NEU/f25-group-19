@@ -30,7 +30,6 @@ function Login() {
 
     return (
         <>
-
             {/* Navbar */}
             <header className='landing-navbar'>
                 <div id="logo-nav">
@@ -66,11 +65,9 @@ function Login() {
                     <button type="submit">
                         Log In
                     </button>
+                    <Link to="/signup">Sign Up</Link>
                     {message && <p className={`message ${messageType}`}>{message}</p>}
                 </form>
-                <div>
-                    <Link to="/signup">Sign Up</Link>
-                </div>
             </div>
         </>
 
