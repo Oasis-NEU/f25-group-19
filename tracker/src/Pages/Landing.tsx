@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { Link as ScrollLink } from 'react-scroll';
 import '../Styles/Landing.css'; // Import the CSS file
 
 function Landing() {
@@ -8,12 +9,19 @@ function Landing() {
         <>
             {/* Navbar */}
             <header className='landing-navbar'>
-                <nav className='auth-links'>
-                    <Link to="/login">
-                        <button>
-                            Sign in
-                        </button>
+                <div id="logo-nav">
+                    <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+                        M8S
                     </Link>
+                </div>
+                <nav className='auth-links'>
+                    <div id="login-nav">
+                        <Link to="/login">
+                            <button>
+                                Sign in
+                            </button>
+                        </Link>
+                    </div>
                 </nav>
             </header>
 
@@ -22,24 +30,30 @@ function Landing() {
                     <div className='content-wrapper'>
                         <h1>M8S</h1>
                         <p>The ultimate roommate chore tracker system</p>
+
+                        {/* FIX: Changed className to 'new-user-buttons' 
+                          to match your CSS file.
+                        */}
                         <div className='new-user-buttons'>
                             <Link to="/signup">
                                 <button>
                                     Get Started
                                 </button>
                             </Link>
-                            <button>
-                                How it works
-                            </button>
+                            <ScrollLink to="how-it-works" smooth={true} duration={500}>
+                                <button>
+                                    How it works
+                                </button>
+                            </ScrollLink>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section className="how-it-works">
+            <section id="how-it-works">
                 <h2>How it Works</h2>
                 <p>
-                    M8S is a program that enables roommates to track and complete tasks, using customizable 
+                    M8S is a program that enables roommates to track and complete tasks, using customizable
                     organization tools and integrated features to enable users to adapt chores to the needs of shared spaces.
                 </p>
                 <h3>Create your Space</h3>
