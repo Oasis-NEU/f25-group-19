@@ -17,23 +17,37 @@ function Landing() {
                 </nav>
             </header>
 
-            <div className='landing-container'>
-                <div className='content-wrapper'>
-                    <h1>M8S</h1>
-                    <p>The ultimate roommate chore tracker system</p>
-                    <div className='new-user-buttons'>
-                        <Link to="/signup">
+            <section className="landing-section">
+                <div className='landing-container'>
+                    <div className='content-wrapper'>
+                        <h1>M8S</h1>
+                        <p>The ultimate roommate chore tracker system</p>
+                        <div className='new-user-buttons'>
+                            <Link to="/signup">
+                                <button>
+                                    Get Started
+                                </button>
+                            </Link>
                             <button>
-                                Get Started
+                                How it works
                             </button>
-                        </Link>
-                        <button>
-                            How it works
-                        </button>
+                        </div>
                     </div>
-
                 </div>
-            </div>
+            </section>
+
+            <section className="how-it-works">
+                <h2>How it Works</h2>
+                <p>
+                    M8S is a program that enables roommates to track and complete tasks, using customizable 
+                    organization tools and integrated features to enable users to adapt chores to the needs of shared spaces.
+                </p>
+                <h3>Create your Space</h3>
+                <p>
+                    Create new rooms and configure your preferences or join existing groups easily using the unique code assigned to each room.
+                </p>
+            </section>
+
         </>
     )
 }
