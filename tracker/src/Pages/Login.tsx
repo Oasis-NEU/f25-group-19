@@ -30,15 +30,14 @@ function Login() {
 
     return (
         <>
-            <header>
-                <nav className="navbar">
-                    <div className="navbar-logo">
-                        {/* Link to the landing page */}
-                        <Link to="/">M8S</Link>
-                    </div>
-                </nav>
+            {/* Navbar */}
+            <header className='landing-navbar'>
+                <div id="logo-nav">
+                    <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+                        M8S
+                    </Link>
+                </div>
             </header>
-
             <div className="form-container">
                 <form className="form-card" onSubmit={handleSubmit}>
                     <h2>Login</h2>
