@@ -17,23 +17,31 @@ function Landing() {
                 </nav>
             </header>
 
-            <div className='landing-container'>
-                <div className='content-wrapper'>
-                    <h1>M8S</h1>
-                    <p>The ultimate roommate chore tracker system</p>
-                    <div className='new-user-buttons'>
-                        <Link to="/signup">
+            <section className="landing-section">
+                <div className='landing-container'>
+                    <div className='content-wrapper'>
+                        <h1>M8S</h1>
+                        <p>The ultimate roommate chore tracker system</p>
+                        <div className='new-user-buttons'>
+                            <Link to="/signup">
+                                <button>
+                                    Get Started
+                                </button>
+                            </Link>
                             <button>
-                                Get Started
+                                How it works
                             </button>
-                        </Link>
-                        <button>
-                            How it works
-                        </button>
+                        </div>
                     </div>
-
                 </div>
-            </div>
+            </section>
+
+            <section className="how-it-works">
+                <p>
+                    M8S Test
+                </p>
+            </section>
+
         </>
     )
 }
