@@ -4,25 +4,54 @@
     --font-light: #f1f1f1;
     --hover: #ac2222;
     --accent: #6dfbf4;
+    --border-radius: 6px;
     --padding-edge: 0.6rem 1rem;
 }
+
 *, *::before, *::after {
     box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: var(--font-light) transparent;
 }
+
 html {
     scroll-behavior: smooth;
 }
+
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
+    background-image: linear-gradient(to bottom, var(--primary-color) 0%, #ff6262 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
 }
-/* #region Reusable Components (Buttons)*/
+
+/* #region Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--font-light);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+}
+/* #endregion */
+
+/* #region Reusable Components (Buttons) */
 .auth-links button,
 .new-user-buttons button {
     background-color: var(--font-light);
     color: var(--font-dark);
     border: none;
-    border-radius: 6px;
+    border-radius: var(--border-radius);
     width: auto;
     padding: var(--padding-edge);
     font-size: 1rem;
@@ -32,12 +61,14 @@ body {
     transition: background-color 0.2s, color 0.2s;
     text-decoration: none;
 }
+
 .auth-links button:hover,
 .new-user-buttons button:hover {
     background-color: var(--hover);
     color: var(--font-light);
 }
 /* #endregion */
+
 /* #region Landing Navbar */
 .landing-navbar {
     position: absolute; 
@@ -49,6 +80,7 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+
 #logo-nav {
     font-size: 2rem;
     font-weight: 700;
@@ -58,27 +90,33 @@ body {
     transition: color 0.2s;
     text-decoration: none;
 }
+
+#logo-nav a {
+    color: inherit;
+    text-decoration: none;
+}
+
 #logo-nav:hover {
     color: var(--hover);
 }
-#login-nav {
-}
+
 .auth-links {
     display: flex;
     align-items: center;
+    gap: 1rem;
 }
 /* #endregion */
+
 /* #region Landing Hero Section */
 .landing-container {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-image: linear-gradient(to bottom, var(--primary-color) 40%, #ff5d5d 100%);
     color: var(--font-light);
-    font-family: 'Poppins', sans-serif;
     padding: 1rem;
 }
+
 .content-wrapper {
     display: flex;
     flex-direction: column;
@@ -86,12 +124,18 @@ body {
     text-align: center;
     gap: 0.5rem;
 }
+
 .landing-container h1 {
     font-size: clamp(5rem, 15vw, 10rem);
     font-weight: 700;
-    margin: 0;
-    margin-bottom: -4rem; 
+    margin: 0 0 -4rem 0;
 }
+
+.landing-container p {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    margin: 0;
+}
+
 .new-user-buttons {
     display: flex;
     flex-wrap: wrap;
@@ -100,29 +144,31 @@ body {
     margin-top: 1.5rem;
 }
 /* #endregion */ 
+
 /* #region "How it works" Section */
 #how-it-works {
-    min-height: 100dvh;
+    min-height: 100vh;
     padding: 3rem 1.5rem;
 }
+
 #how-it-works h2 {
     color: var(--font-light); 
     font-size: clamp(2.5rem, 8vw, 4.5rem);
-    padding: var(--padding-edge);
+    font-weight: 700;
     text-align: center;
     margin: 0 auto 1.5rem auto;
 }
+
 #how-it-works h3 {
     color: var(--font-light); 
     font-size: 2rem;
-    padding: var(--padding-edge);
-    margin: 0;
-    margin-bottom: 0.5rem; 
+    font-weight: 600;
+    margin: 2rem 0 0.5rem 0;
     text-align: center;
 }
+
 #how-it-works p {
     color: var(--font-light);
-    padding: var(--padding-edge);
     font-size: 1rem;
     line-height: 1.6; 
     max-width: 65ch;

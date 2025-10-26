@@ -14,7 +14,17 @@ function SignUp() {
                         M8S
                     </Link>
                 </div>
-            </header>        <div className="form-container">
+                <nav className='auth-links'>
+                    <div id="login-nav">
+                        <Link to="/login">
+                            <button>
+                                Sign in
+                            </button>
+                        </Link>
+                    </div>
+                </nav>
+            </header>
+            <div className="form-container">
                 <form className="form-card">
                     <h2>Create Account</h2>
 

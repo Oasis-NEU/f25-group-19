@@ -63,14 +63,12 @@ function Login() {
                         />
                     </div>
 
-                    <button type="submit">
-                        Log In
-                    </button>
+                    <button type="submit">Log In</button>
+                    <div className="signup-link">
+                        <Link to="/signup">Sign Up</Link>
+                    </div>
                     {message && <p className={`message ${messageType}`}>{message}</p>}
                 </form>
-                <div>
-                    <Link to="/signup">Sign Up</Link>
-                </div>
             </div>
         </>
 

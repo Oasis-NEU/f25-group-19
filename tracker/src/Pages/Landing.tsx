@@ -30,17 +30,13 @@ function Landing() {
                     <div className='content-wrapper'>
                         <h1>M8S</h1>
                         <p>The ultimate roommate chore tracker system</p>
-
-                        {/* FIX: Changed className to 'new-user-buttons' 
-                          to match your CSS file.
-                        */}
                         <div className='new-user-buttons'>
                             <Link to="/signup">
                                 <button>
                                     Get Started
                                 </button>
                             </Link>
-                            <ScrollLink to="how-it-works" smooth={true} duration={500}>
+                            <ScrollLink to="how-it-works" smooth={true} duration={50}>
                                 <button>
                                     How it works
                                 </button>
