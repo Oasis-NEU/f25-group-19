@@ -42,10 +42,17 @@ class room {
                     this.chore_list.get(chore)?.edit_description(change)
                     break;
                 case 'FREQUENCY':
-                    if (change instanceof Date) {
+                    if (this.chore_exists(change) == false) {
                         this.chore_list.get(chore)?.edit_frequency(change)
                     } else {
-                        throw new Error('not a valid Date')
+                        throw new Error('not a valid time')
+                    }
+                    break;
+                case 'TIME_TYPE':
+                    if (this.chore_exists(change) == false) {
+                        this.chore_list.get(chore)?.edit_time_type(change)
+                    } else {
+                        throw new Error('not a valid time')
                     }
                     break;
                 case 'COMPLETION':
@@ -72,9 +79,9 @@ class room {
      * 
      * all of this info is coming from the controller 
      */
-    add_chore(task_title: string, frequency: Date, completion: boolean, description?: string): void {
+    add_chore(task_title: string, frequency: string, time_type: string, completion: boolean, description?: string): void {
         if (!this.chore_list.has(task_title)) {
-            const new_chore = new Chores(task_title, frequency, completion, description) // check if this doesnt add description if not there
+            const new_chore = new Chores(task_title, frequency, time_type, completion, description) // check if this doesnt add description if not there
             this.chore_list.set(task_title, new_chore);
         } else {
             throw new Error('Chore already exists'); 

@@ -27,7 +27,7 @@
 
 
 - Room Data
-	- List of users []
+	- Hashmap -> users []
 	- room_code: int = len(6)
 	- Hashmap => 
 	constructor Chore {
