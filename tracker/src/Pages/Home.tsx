@@ -1,21 +1,13 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../Styles/main.css';
-
-const UserIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none" className="user-icon">
-    <circle cx="16" cy="16" r="15" stroke="currentColor" strokeWidth="2" fill="none"/>
-    <path d="M22 25v-1.5a3 3 0 0 0-3-3h-6a3 3 0 0 0-3 3V25" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-    <circle cx="16" cy="11" r="3" stroke="currentColor" strokeWidth="2" fill="none"/>
-  </svg>
-);
+import defaultUserIcon from '../assets/person.svg';
 
 function Home() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const handleLogout = () => {
     console.log("User logged out");
-    // Add logout logic here
     setIsDropdownOpen(false);
   };
 
@@ -23,18 +15,27 @@ function Home() {
     <>
       <header className='landing-navbar'>
         <div id="logo-nav">
-          <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <Link to="/home" style={{ textDecoration: 'none', color: 'inherit' }}>
             M8S
           </Link>
         </div>
         <nav className='auth-links'>
           <div className="user-dropdown-container">
             <button 
-              className="user-icon-button"
-              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+            className="user-icon-button"
+            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+          >
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              viewBox="0 0 24 24" 
+              className="user-icon"
             >
-              <UserIcon />
-            </button>
+              <path 
+                d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" 
+                fill="currentColor"
+                />
+            </svg>
+          </button>
             
             {isDropdownOpen && (
               <div className="dropdown-menu">
@@ -48,9 +49,9 @@ function Home() {
                   Settings
                 </Link>
                 <div className="dropdown-divider"></div>
-                <button className="dropdown-item" onClick={handleLogout}>
+                <Link to="/" className="dropdown-item" onClick={() => setIsDropdownOpen(false)}>
                   Log Out
-                </button>
+                </Link>
               </div>
             )}
           </div>
