@@ -3,10 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Landing from './Pages/Landing'
 import Login from './Pages/Login'
 import Signup from './Pages/Signup'
-<<<<<<< HEAD
-=======
-// import { supabase } from './supabase-client'
->>>>>>> ae22bef (something)
 
 function App() {
     return (
