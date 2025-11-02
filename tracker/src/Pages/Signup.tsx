@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom'
 
 function SignUp() {
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+    }
 
     return (
         <>
