@@ -4,32 +4,117 @@
     --font-light: #f1f1f1;
     --hover: #ac2222;
     --accent: #6dfbf4;
+    --border-radius: 6px;
+    --padding-edge: 0.6rem 1rem;
 }
 
+*, *::before, *::after {
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: var(--font-light) transparent;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-image: linear-gradient(to bottom, var(--primary-color) 0%, #ff6262 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+/* #region Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--font-light);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+}
+/* #endregion */
+
+/* #region Reusable Components (Buttons) */
+.auth-links button,
+.new-user-buttons button {
+    background-color: var(--font-light);
+    color: var(--font-dark);
+    border: none;
+    border-radius: var(--border-radius);
+    width: auto;
+    padding: var(--padding-edge);
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    text-decoration: none;
+}
+
+.auth-links button:hover,
+.new-user-buttons button:hover {
+    background-color: var(--hover);
+    color: var(--font-light);
+}
+/* #endregion */
+
+/* #region Landing Navbar */
 .landing-navbar {
     position: absolute; 
     top: 0;
     left: 0;
     width: 100%;
-    padding: 1rem 2rem;
+    padding: var(--padding-edge);
     display: flex;
-    justify-content: flex-end;
-    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo-nav {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--font-light);
+    margin: 0;
+    cursor: pointer;
+    transition: color 0.2s;
+    text-decoration: none;
+}
+
+#logo-nav a {
+    color: inherit;
+    text-decoration: none;
+}
+
+#logo-nav:hover {
+    color: var(--hover);
 }
 
 .auth-links {
     display: flex;
     align-items: center;
+    gap: 1rem;
 }
+/* #endregion */
 
+/* #region Landing Hero Section */
 .landing-container {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-image: linear-gradient(to bottom, var(--primary-color) 40%, #ff5d5d 100%);
     color: var(--font-light);
-    font-family: 'Poppins', sans-serif;
+    padding: 1rem;
 }
 
 .content-wrapper {
@@ -37,68 +122,57 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    gap: 0.5rem;
 }
-
 
 .landing-container h1 {
-    font-size: 20dvh;
+    font-size: clamp(6rem, 15vw, 10rem);
     font-weight: 700;
+    margin: 0 0 -2rem 0;
+}
+
+.landing-container p {
+    font-size: clamp(1rem, 2vw, 1.25rem);
     margin: 0;
-    margin-bottom: -4rem;
-}
-
-.auth-links button {
-    background-color: var(--font-light);
-    color: var(--font-dark);
-    border: none;
-    border-radius: 6px;
-    width: 100%;
-    padding: 0.6rem 1rem;
-    font-size: 1rem;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.auth-links button:hover {
-    background-color: var(--hover);
-    color: var(--font-light)
-}
-
-.auth-links a {
-    color: var(--font-light);
-    text-decoration: underline;
-    margin-top: 0.75rem;
-    font-size: 0.9rem;
-}
-
-.auth-links a:not(:first-child) {
-    margin-left: 1rem;
 }
 
 .new-user-buttons {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+/* #endregion */ 
+
+/* #region "How it works" Section */
+#how-it-works {
+    min-height: 100vh;
+    padding: 3rem 1.5rem;
 }
 
-.new-user-buttons button{
-  background-color: var(--font-light);
-  color: var(--font-dark);
-  border: none;
-  border-radius: 6px;
-  width: auto;
-  padding: 0.6rem 1rem;
-  font-size: 1rem;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.2s;
+#how-it-works h2 {
+    color: var(--font-light); 
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 700;
+    text-align: center;
+    margin: 0 auto 1.5rem auto;
 }
 
-.new-user-buttons button:hover {
-  background-color: var(--hover);
-  color: var(--font-light)
+#how-it-works h3 {
+    color: var(--font-light); 
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 2rem 0 0.5rem 0;
+    text-align: center;
 }
 
+#how-it-works p {
+    color: var(--font-light);
+    font-size: 1rem;
+    line-height: 1.6; 
+    max-width: 65ch;
+    margin: 0 auto 1rem auto;
+    text-align: center;
+}
+/* #endregion */

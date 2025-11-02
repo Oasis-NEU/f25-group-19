@@ -29,39 +29,48 @@ function Login() {
     };
 
     return (
-        <div className="form-container">
-            <form className="form-card" onSubmit={handleSubmit}>
-                <h2>Login</h2>
-
-                <div className='input-group'>
-                    <label>Username</label>
-                    <input
-                        type="text"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                        placeholder="Enter username"
-                    />
+        <>
+            {/* Navbar */}
+            <header className='landing-navbar'>
+                <div id="logo-nav">
+                    <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+                        M8S
+                    </Link>
                 </div>
+            </header>
+            <div className="form-container">
+                <form className="form-card" onSubmit={handleSubmit}>
+                    <h2>Login</h2>
 
-                <div className='input-group'>
-                    <label>Password</label>
-                    <input
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        placeholder="Enter password"
-                    />
-                </div>
+                    <div className='input-group'>
+                        <label>Username</label>
+                        <input
+                            type="text"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                            placeholder="Enter username"
+                        />
+                    </div>
 
-                <button type="submit">
-                    Log In
-                </button>
-                {message && <p className={`message ${messageType}`}>{message}</p>}
-            </form>
-            <div>
-                <Link to="/signup">Sign Up</Link>
+                    <div className='input-group'>
+                        <label>Password</label>
+                        <input
+                            type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            placeholder="Enter password"
+                        />
+                    </div>
+
+                    <button type="submit">Log In</button>
+                    <div className="signup-link">
+                        <Link to="/signup">Sign Up</Link>
+                    </div>
+                    {message && <p className={`message ${messageType}`}>{message}</p>}
+                </form>
             </div>
-        </div>
+        </>
+
     );
 }
 
