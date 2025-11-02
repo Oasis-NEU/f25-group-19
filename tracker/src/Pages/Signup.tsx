@@ -1,12 +1,26 @@
-import { useState } from 'react'
+import type { FormEvent, ChangeEvent } from 'react';
+import { useState } from 'react';
 import '../Styles/Form.css'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { supabase } from '../supabase-client';
 
 function SignUp() {
+    const [email, setEmail] = useState("");
+    const [username, setUsername] = useState("")
+    const [password, setPassword] = useState("");
 
-    const handleSubmit = async (e) => {
+
+    
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-    }
+        
+        const {error: signUpError} = await supabase.auth.signUp({email, password})
+        if (signUpError) {
+            console.error("Error signing up:", signUpError.message)
+            return
+        }
+
+    };
 
     return (
         <>
@@ -28,15 +42,16 @@ function SignUp() {
                 </nav>
             </header>
             <div className="form-container">
-                <form className="form-card">
+                <form className="form-card" onSubmit={handleSubmit}>
                     <h2>Create Account</h2>
 
                     <div className="input-group">
                         <label>Username</label>
                         <input
                             type="text"
-                            //value={username}
-                            //onChange={(e) => setUsername(e.target.value)}
+                            value={username}
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => 
+                                setUsername(e.target.value)}
                             placeholder="Enter username"
                         />
                     </div>
@@ -45,8 +60,9 @@ function SignUp() {
                         <label>Email Address</label>
                         <input
                             type="text"
-                            // value={password} easter egg
-                            // onChange={(e) => setPassword(e.target.value)}
+                            value={email}
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => 
+                                setEmail(e.target.value)}
                             placeholder="name@example.com"
                         />
                     </div>
@@ -55,8 +71,9 @@ function SignUp() {
                         <label>Password</label>
                         <input
                             type="password"
-                            // value={password}
-                            // onChange={(e) => setPassword(e.target.value)}
+                            value={password}
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => 
+                                setPassword(e.target.value)}
                             placeholder="Enter password"
                         />
                     </div>
