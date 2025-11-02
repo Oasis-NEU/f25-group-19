@@ -55,7 +55,13 @@ function Landing() {
                 </p>
                 <h3>Create your Space</h3>
                 <p>
-                    Create new rooms and configure your preferences or join existing groups easily using the unique code assigned to each room.
+                    Create new rooms and configure your preferences or join existing groups easily using the unique code 
+                    assigned to each room.
+                </p>
+                <h3>Configure Tasks</h3>
+                <p>
+                    Create new tasks and chores with detailed scheduling and customization options. Easily configure your to-do list
+                    with customizable templates.
                 </p>
             </section>
 
