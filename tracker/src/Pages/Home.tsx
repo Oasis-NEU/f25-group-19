@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import NoRoom from '../Components/NoRoom'
 import '../Styles/main.css';
 
 const UserIcon = () => (
@@ -54,8 +55,13 @@ function Home() {
               </div>
             )}
           </div>
+          
         </nav>
+        
       </header>
+        <div>
+          <NoRoom />
+        </div>
     </>
   );
 }
