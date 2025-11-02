@@ -1,14 +1,11 @@
-/* Navbar.css */
-
 .navbar {
     width: 100%;
-    /* Position fixed to stay at the top, or absolute if you want it to scroll */
     position: fixed; 
     top: 0;
     left: 0;
     /* Basic styling */
-    background-color: transparent; /* White background */
-    z-index: 1000; /* Ensure it stays on top of other content */
+    background-color: transparent; 
+    z-index: 1000;
     /* Layout using Flexbox */
     display: flex;
     align-items: center;
@@ -16,11 +13,10 @@
 }
 
 .navbar-logo a {
-    /* Style for the logo text */
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--font-light); /* Use your primary color */
-    text-decoration: none; /* Remove underline */
+    color: var(--font-light);
+    text-decoration: none;
     transition: color 0.2s;
     display: flex;
     align-items: center;

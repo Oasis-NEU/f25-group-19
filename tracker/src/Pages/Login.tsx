@@ -1,17 +1,26 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 import '../Styles/Form.css'
 
+
 function Login() {
+    const navigate = useNavigate();
+
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
     const [messageType, setMessageType] = useState(""); // 'success' or 'error'
 
+    const handleButtonClick = () => {
+        // Navigate to the '/about' page
+        navigate('/home');
+      };
+
+
     const handleSubmit = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
 
-        // Example: basic validation
         if (!username || !password) {
             setMessage("Please fill out both fields.");
             setMessageType("error");
@@ -19,9 +28,10 @@ function Login() {
         }
 
         // TODO: Replace with actual authentication logic
-        if (username === "luisisthegoat" && password === "67brainrot") {
+        if (username === "123" && password === "123") {
             setMessage("✅ Login successful!");
             setMessageType("success");
+            handleButtonClick();
         } else {
             setMessage("❌ Invalid username or password.");
             setMessageType("error");
