@@ -7,8 +7,6 @@
     --border-color: #ccc;
     --border-radius: 6px;
     --padding-edge: 0.6rem 1rem;
-    --success-color: #28a745;
-    --error-color: #dc3545;
 }
 
 *, *::before, *::after {
@@ -108,11 +106,11 @@ body {
 }
 
 .message.success {
-    color: var(--success-color);
+    color: var(--font-light);
 }
 
 .message.error {
-    color: var(--error-color);
+    color: var(--font-light);
 }
 
 .signup-link {

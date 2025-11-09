@@ -1,65 +1,57 @@
-import React from 'react';
-import '../Styles/Dashboard.css'
+import React, { useState } from 'react';
+import '../Styles/Dashboard.css';
+import RoomCard from './RoomCard'; // Import the new card
+import JoinRoomModal from './JoinRoomModal'; // Import the new modal
 
-// --- Type Definitions ---
+// Mock data for rooms
+const mockRooms = [
+  { id: '1', name: 'Hilltop Hall 404', memberCount: 4, iconBg: '#e0f2fe', iconColor: '#0284c7' },
+  { id: '2', name: 'The Cove', memberCount: 2, iconBg: '#dcfce7', iconColor: '#16a34a' },
+  { id: '3', name: 'Parker St. Apt', memberCount: 3, iconBg: '#ffedd5', iconColor: '#f97316' },
+];
 
-
-// --- Main App Component ---
-
-/**
- * Main Dorm Life Dashboard component.
- * Displays user's dorm rooms and associated tasks in a responsive two-column layout.
- */
 function Dashboard() {
+  const [isJoinModalOpen, setIsJoinModalOpen] = useState(false);
+  const [rooms, setRooms] = useState(mockRooms); // Use mock data
+
   return (
-    <div className="dashboard-container">
-        
-      <div className="dashboard-main-content">
-
-        {/* Main Content Containers: Responsive Flex Layout */}
-        <div className="content-wrapper">
-
-          {/* LEFT CONTAINER: Dorm Rooms */}
-          <div className="room-panel-wrapper">
-            <div className="panel room-panel-content">
-              <h2 className="panel-heading-rooms">
-                
-                <span>My Dorm Rooms</span>
-              </h2>
-              <div className="room-list-container">
-                
-              </div>
-              <button className="room-join-button">
-                + Join a New Room
-              </button>
-            </div>
+    <>
+      <div className="dashboard-container">
+        <div className="dashboard-card">
+          
+          <h2 className="panel-heading-rooms">
+            My Dorm Rooms
+          </h2>
+          
+          <div className="room-list-container">
+            {rooms.length > 0 ? (
+              rooms.map(room => (
+                <RoomCard key={room.id} room={room} />
+              ))
+            ) : (
+              <p className="empty-room-message">
+                You haven't joined any rooms yet.
+              </p>
+            )}
           </div>
-
-          {/* RIGHT CONTAINER: Tasks */}
-          <div className="task-panel-wrapper">
-            <div className="panel">
-              <div className="task-panel-header">
-                <h2 className="panel-heading-tasks">
-                    
-                    <span>Shared & Personal Tasks</span>
-                </h2>
-              </div>
-              
-              <div className="task-list-container">
-                
-              </div>
-
-              <div className="task-panel-footer">
-                <button className="task-add-button">
-                  + Add New Task
-                </button>
-              </div>
-            </div>
-          </div>
+          
+          <button 
+            className="room-join-button" 
+            aria-label="Join a new room"
+            onClick={() => setIsJoinModalOpen(true)} // Open the modal
+          >
+            + Join a New Room
+          </button>
 
         </div>
       </div>
-    </div>
+
+      {/* Render the modal */}
+      <JoinRoomModal 
+        isOpen={isJoinModalOpen} 
+        onClose={() => setIsJoinModalOpen(false)} 
+      />
+    </>
   );
 };
 
