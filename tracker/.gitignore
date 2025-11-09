@@ -1,5 +1,5 @@
 supabase-client.ts
-
+.env
 # Logs
 logs
 *.log

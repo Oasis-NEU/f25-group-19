@@ -82,8 +82,9 @@ function SignUp() {
                         <label>Confirm Password</label>
                         <input
                             type="password"
-                            // value={password}
-                            // onChange={(e) => setPassword(e.target.value)}
+                            value={password}
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => 
+                                setPassword(e.target.value)}
                             placeholder="Confirm password"
                         />
                     </div>
