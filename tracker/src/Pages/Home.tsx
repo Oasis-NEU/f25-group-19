@@ -1,10 +1,12 @@
-import { Navbar } from '../Components/Components';  // adjust path as needed
+import { Navbar } from '../Components/Components'; 
+import NoRoom from '../Components/NoRoom';
 
 function Home() {
   return (
     <>
       <Navbar />
-      {/* Your page content */}
+      <NoRoom />
+      
     </>
   );
 }
