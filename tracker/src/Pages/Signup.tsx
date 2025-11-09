@@ -68,9 +68,10 @@ function SignUp() {
                         />
                     </div>
 
-                    <button type="submit">
-                        Create Account
-                    </button>
+                    <Link to="/setup">
+                        <button type="submit">Create Account</button>
+                    </Link>
+                    
                     {/* {message && <p className={`message ${messageType}`}>{message}</p>} */}
                 </form>
             </div>
