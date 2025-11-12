@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
+import { supabase } from '../supabase-client'
 import '../Styles/Form.css'
 
 
@@ -18,9 +19,9 @@ function Login() {
       };
 
 
-    const handleSubmit = (e: { preventDefault: () => void; }) => {
-        e.preventDefault();
-
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault()
+    
         if (!username || !password) {
             setMessage("Please fill out both fields.");
             setMessageType("error");
@@ -32,6 +33,7 @@ function Login() {
             setMessage("✅ Login successful!");
             setMessageType("success");
             handleButtonClick();
+        
         } else {
             setMessage("❌ Invalid username or password.");
             setMessageType("error");
