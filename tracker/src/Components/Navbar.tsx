@@ -40,9 +40,6 @@ function Navbar() {
               <Link to="/rooms" className="dropdown-item" onClick={() => setIsDropdownOpen(false)}>
                 Rooms
               </Link>
-              <Link to="/createRoom" className="dropdown-item" onClick={() => setIsDropdownOpen(false)}>
-                Create Room
-              </Link>
               <Link to="/settings" className="dropdown-item" onClick={() => setIsDropdownOpen(false)}>
                 Settings
               </Link>
