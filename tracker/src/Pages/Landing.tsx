@@ -1,11 +1,9 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Link as ScrollLink } from 'react-scroll';
-import '../Styles/Landing.css'; // Import the CSS file
+import '../Styles/Landing.css';
 
 function Landing() {
     return (
-        // Use a Fragment to return two separate layout elements
         <>
             {/* Navbar */}
             
