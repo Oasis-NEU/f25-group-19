@@ -191,7 +191,7 @@
 }
 
 .join-code-input::placeholder { 
-  color: rgba(255,255,255,0.5); 
+  color: var(--font-light); 
   font-size: 1.5rem;
 }
 
@@ -216,5 +216,3 @@
     color: var(--error-color);
 }
 /* #endregion */
-
-

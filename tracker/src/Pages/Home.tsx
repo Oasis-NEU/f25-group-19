@@ -1,12 +1,12 @@
-import { Navbar } from '../Components/Components'; 
-import NoRoom from '../Components/NoRoom';
+import { Navbar } from '../Components/Components';  // adjust path as needed
+import Dashboard from '../Components/Dashboard';
 
 function Home() {
   return (
     <>
       <Navbar />
-      <NoRoom />
-      
+      {/* Your page content */}
+      <Dashboard />
     </>
   );
 }

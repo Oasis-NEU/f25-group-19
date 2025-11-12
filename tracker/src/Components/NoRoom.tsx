@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../Styles/NoRoom.css';
-//import { LogIn, Users } from 'lucide-react'; 
+import { Link } from 'react-router-dom'; // Import Link
 
 function NoRoom() {
   const [showJoin, setShowJoin] = useState(false);
@@ -11,6 +11,8 @@ function NoRoom() {
   const openJoin = () => setShowJoin(true);
   const closeJoin = () => {
     setCode('');
+    setMessage('');
+    setMessageType('');
     setShowJoin(false);
   };
 
@@ -19,14 +21,24 @@ function NoRoom() {
     // TODO: integrate with join-room logic (API / sockets)
     console.log('Attempt join room with code:', code);
 
-    if (code.length < 6 || code.length > 6) {
+    if (code.length !== 6) { // Simplified check
       setMessage("Room code must be 6 characters long");
-      setMessageType("Error");
+      setMessageType("error");
+      return; // Stop execution
     }
 
-    if (true /* Replace with Check in db for roomcode match */ ) {
-
+    // --- Placeholder Logic ---
+    // Replace with Check in db for roomcode match
+    if (code === "123456") {
+      setMessage("Successfully joined room!");
+      setMessageType("success");
+      // TODO: Navigate to the room
+      // navigate(`/room/${roomId}`);
+    } else {
+      setMessage("Invalid room code. Please try again.");
+      setMessageType("error");
     }
+    // --- End Placeholder ---
   };
 
   return (
@@ -40,8 +52,9 @@ function NoRoom() {
                 className="join-code-input"
                 placeholder="Enter Room Code"
                 value={code}
-                onChange={(e) => setCode(e.target.value)}
+                onChange={(e) => setCode(e.target.value.toUpperCase())} // Force uppercase
                 aria-label="6 Digit Room Code"
+                maxLength={6}
               />
 
               <div className="button-group">
@@ -49,6 +62,7 @@ function NoRoom() {
                 <button type="button" className="lobby-button back-btn" onClick={closeJoin}>Back</button>
               </div>
             </form>
+            {message && <p className={`message ${messageType}`}>{message}</p>}
           </div>
         </div>
       ) : (
@@ -58,13 +72,17 @@ function NoRoom() {
 
             {/* Button Container */}
             <div className="button-group">
-              <button className="lobby-button create-room-btn">Create a Room</button>
+              {/* MODIFIED: Used Link component for navigation */}
+              <Link to="/createRoom" className="lobby-button create-room-btn">
+                Create a Room
+              </Link>
 
               {/* Join Room Button */}
-              <button className="lobby-button join-room-btn" onClick={openJoin}>Join a Room with Code</button>
+              <button className="lobby-button join-room-btn" onClick={openJoin}>
+                Join a Room with Code
+              </button>
             </div>
           </div>
-          {message && <p className={`message ${messageType}`}>{message}</p>}
         </div>
       )}
     </>
