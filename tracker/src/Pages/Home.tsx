@@ -1,4 +1,4 @@
-import { Navbar } from '../Components/Components';  // adjust path as needed
+import Navbar from '../Components/Navbar';
 import Dashboard from '../Components/Dashboard';
 
 function Home() {
